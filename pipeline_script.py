@@ -1,26 +1,23 @@
 import json
 import requests
 
-# pokemon_request_json = requests.get("https://pokeapi.co/api/v2/pokemon/turtwig").json()
-# pokemon_species_request_json = requests.get("https://pokeapi.co/api/v2/pokemon-species/turtwig/").json()
+# JSON file functions ---------------------------------------------------------------
 
-# print("pokemon_request_json:")
-# print(pokemon_request_json.keys())
-# print("pokemon_species_request_json:")
-# print(pokemon_species_request_json.keys())
+def write_to_json_file(file_name, data):
+    with open(file_name, "w") as json_file:
+        json.dump(data, json_file)
 
-# pokemon = "giratina"
-# pokemon_request_status = requests.get(f"https://pokeapi.co/api/v2/pokemon/{pokemon}").status_code
-# print(pokemon_request_status)
-# pokemon_request_json = requests.get(f"https://pokeapi.co/api/v2/pokemon/{pokemon}/").json()
-# print(pokemon_request_json)
-# print("Types:")
-# print(pokemon_request_json["types"])
-# types = pokemon_request_json["types"]
-# print("Type type:")
-# print(type(pokemon_request_json["types"]))
-# for pokemon_type in types:
-#     print(pokemon_type["type"]["name"])
+def load_json_file(file_name):
+    with open(file_name) as json_file:
+        data = json.load(json_file)
+        return data
+
+def add_to_json_file(file_name, data):
+    existing_data = load_json_file(file_name)
+    existing_data.update(data)
+    write_to_json_file(file_name, existing_data)
+
+# ------------------------------------------------------------------------------------
 
 pokemon_list = ["torterra", "dialga", "gliscor", "dusknoir", "bronzong"]
 pokemon_data_dict = {}
@@ -52,16 +49,12 @@ for pokemon in pokemon_list:
 
 print(pokemon_data_dict)
 
+file_name = "pokemon_data.json"
+
+# add_to_json_file(file_name, pokemon_data_dict)
 
 
 
-        # types.append(pokemon_type["type"]["name"])
-    # pokemon_data.update({pokemon: pokemon_request_json["types"]})
-    # pokemon_types =
-    # print(f"Pokemon Types: {pokemon_types}")
 
-# print(pokemon_data)
 
-# pokemon_data =
 
-# Is giratina not on here?
