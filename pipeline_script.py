@@ -28,17 +28,19 @@ pokemon_data_dict = {}
 for pokemon in pokemon_list:
     pokemon_data = {}
     pokemon_data_dict.update({pokemon: pokemon_data})
+    pokemon_request_json = requests.get(f"https://pokeapi.co/api/v2/pokemon/{pokemon}/").json()
 
     # Inserting pokemon name
     print(f"Pokemon Name: {pokemon}")
     pokemon_data_dict[pokemon]["name"] = pokemon
 
+    # Inserting pokemon types
+    types = []
+    for index, pokemon_type in enumerate(pokemon_request_json["types"]):
+        print(f"Type {index + 1}: {pokemon_type["type"]["name"]}")
+        types.append(pokemon_type["type"]["name"])
 
-    # pokemon_request_json = requests.get(f"https://pokeapi.co/api/v2/pokemon/{pokemon}/").json()
-    # types = []
-    # for pokemon_type in pokemon_request_json["types"]:
-    #     print(pokemon_type["type"]["name"])
-    #     types.append(pokemon_type["type"]["name"])
+    pokemon_data_dict[pokemon]["types"] = types
 
 print(pokemon_data_dict)
 
