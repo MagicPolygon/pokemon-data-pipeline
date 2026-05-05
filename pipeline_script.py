@@ -42,6 +42,14 @@ for pokemon in pokemon_list:
 
     pokemon_data_dict[pokemon]["types"] = types
 
+    # Inserting pokemon abilities
+    abilities = []
+    for index, pokemon_ability in enumerate(pokemon_request_json["abilities"]):
+        print(f"Ability {index + 1}: {pokemon_ability["ability"]["name"]}")
+        abilities.append(pokemon_ability["ability"]["name"])
+
+    pokemon_data_dict[pokemon]["abilities"] = abilities
+
 print(pokemon_data_dict)
 
 
