@@ -26,7 +26,7 @@ def add_to_json_file(file_name, data):
     except:
         print("There was an error with adding data to the file.")
 
-# Other functions --------------------------------------------------------------------
+# Pokémon dictionary functions -------------------------------------------------------
 
 def enter_pokemon_data(pokemon_list):
     try:
