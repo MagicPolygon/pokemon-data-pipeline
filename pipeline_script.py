@@ -52,7 +52,7 @@ def enter_pokemon_data(pokemon_list):
 # Data -------------------------------------------------------------------------------
 
 file_name = "pokemon_data.json"
-pokemon_list = ["torterra", "dialga", "gliscor", "dusknoir", "bronzong"]
+pokemon_list = []
 pokemon_data_dict = enter_pokemon_data(pokemon_list)
 
 # Processing -------------------------------------------------------------------------
