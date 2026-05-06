@@ -76,7 +76,7 @@ After setting up, go to the `pokemon_list` variable in the `Data` section of `pi
 ## Brief explanation of the pipeline
 1. The program starts by taking a list of Pokémon from the user and creating an empty Pokémon data dictionary.
 2. Then, it does the following for each Pokémon in the list
-  1. It inserts the Pokémon's name into the empty dictionary.
-  2. It collects the Pokémon's types using the Pokémon API and adds those to a list, which goes in the dictionary in an organised way.
-  3. It collects the Pokémon's abilities using the Pokémon API and adds those to a list, which goes in the dictionary in an organised way.
+  - It inserts the Pokémon's name into the empty dictionary.
+  - It collects the Pokémon's types using the Pokémon API and adds those to a list, which goes in the dictionary in an organised way.
+  - It collects the Pokémon's abilities using the Pokémon API and adds those to a list, which goes in the dictionary in an organised way.
 3. After running through the list of Pokémon, it returns the Pokémon data dictionary and updates the data in the `pokemon_data.json` file, which acts as the store of our output.
